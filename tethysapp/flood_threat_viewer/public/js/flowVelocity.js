@@ -8,11 +8,21 @@ var baseLayer = new ol.layer.Tile({
 });
 
 //Define all WMS Sources:
-var flood_extent =  new ol.source.TileWMS({
+var velocity_1 =  new ol.source.TileWMS({
         url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
 
         params:{
-            LAYERS:"12",
+            LAYERS:"11",
+//            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
+        },
+        crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
+        });
+
+var velocity_2 =  new ol.source.TileWMS({
+        url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
+
+        params:{
+            LAYERS:"20",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
@@ -20,12 +30,16 @@ var flood_extent =  new ol.source.TileWMS({
 
 //Define all WMS layers
 //The gauge layers can be changed to layer.Image instead of layer.Tile (and .ImageWMS instead of .TileWMS) for a single tile
-var flood = new ol.layer.Tile({
-    source:flood_extent
+var speed_1 = new ol.layer.Tile({
+    source:velocity_1
     });
 
-sources = [flood_extent];
-layers = [baseLayer, flood];
+var speed_2 = new ol.layer.Tile({
+    source:velocity_2
+    });
+
+sources = [velocity_1, velocity_2];
+layers = [baseLayer, speed_1, speed_2];
 
 //Establish the view area. Note the reprojection from lat long (EPSG:4326) to Web Mercator (EPSG:3857)
 var view = new ol.View({

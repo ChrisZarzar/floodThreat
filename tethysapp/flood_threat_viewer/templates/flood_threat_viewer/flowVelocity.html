@@ -16,22 +16,32 @@
     {# Set of radio buttons to show for flow velocity selection #}
     <div id="fvRadioGroup">
         <h9>Likelihood flow velocity will flow faster than</h9>
-        <li><input type="radio" onClick="flood.setVisible(!flood.getVisible());"  id="fv_hlf" name="wd" value="fvhlf">1 mph
-        <li><input type="radio" onClick="land.setVisible(!land.getVisible());"  id="fv_1" name="wd" value="fv1">2 mph
-        <li><input type="radio" onClick="address.setVisible(!address.getVisible());"  id="fv_2" name="wd" value="fv2">4 mph
-        <li><input type="radio" onClick="flood.setVisible(!flood.getVisible());"  id="fv_3" name="wd" value="fv3">6 mph
-        <li><input type="radio" onClick="land.setVisible(!land.getVisible());"  id="fv_4" name="wd" value="fv4">8 mph
+        <li><input type="checkbox" onClick="speed_1.setVisible(!speed_1.getVisible());"  id="fv_hlf" name="wd" value="fvhlf" checked>1 mph</li>
+        <li><input type="checkbox" onClick="speed_2.setVisible(!speed_2.getVisible());"  id="fv_1" name="wd" value="fv1" checked>2 mph</li>
+        <li><input type="checkbox" onClick="address.setVisible(!address.getVisible());"  id="fv_2" name="wd" value="fv2">4 mph</li>
+        <li><input type="radio" onClick="flood.setVisible(!flood.getVisible());"  id="fv_3" name="wd" value="fv3">6 mph</li>
+        <li><input type="radio" onClick="land.setVisible(!land.getVisible());"  id="fv_4" name="wd" value="fv4">8 mph</li>
     </div>
 
 {% endblock %}
 
 {% block app_content %}
+<!-- This extra bit of style defines the size of the "map" div tag area that shows up later -->
+    <style>
+      .map {
+        height: 600px;
+        width: 100%;
+      }
+    </style>
+
+  <div id="map" class="map"></div>
 
 {% endblock %}
 
-
-
-{% block app_actions %}
-
+{% block scripts %}
+  {{ block.super }}
+  <script src="{% static 'flood_threat_viewer/js/flowVelocity.js' %}" type="text/javascript"></script>
 {% endblock %}
+
+
 

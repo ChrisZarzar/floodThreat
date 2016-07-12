@@ -11,14 +11,10 @@
     <li><a href="{% url 'flood_threat_viewer:flowVelocity' %}">Flow Velocity</a></li>
     <li><a href="{% url 'flood_threat_viewer:critConditions' %}">Critical Conditions</a></li>
     <li class="separator"></li>
-
-
-
 {% endblock %}
 
 
 {% block app_content %}
-
 <!-- This extra bit of style defines the size of the "map" div tag area that shows up later -->
     <style>
       .map {
@@ -27,14 +23,12 @@
       }
     </style>
 
-  <div id="map" class="map"></div>
-
+<!--div tag for map-->
+    <div id="map" class="map"></div>
 {% endblock %}
 
 {% block app_actions %}
-
 {% endblock %}
-
 
 {% block scripts %}
   {{ block.super }}
