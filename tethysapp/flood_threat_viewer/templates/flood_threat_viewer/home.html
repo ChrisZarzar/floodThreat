@@ -3,7 +3,7 @@
 {% load staticfiles %}
 
 {% block app_navigation_items %}
-    <li><a href="{% url 'flood_threat_viewer:home' %}">Home</a></li>
+    <li class=active><a href="{% url 'flood_threat_viewer:home' %}">Home</a></li>
     <li><a href="{% url 'flood_threat_viewer:Instructions' %}">Instructions</a></li>
     <li class="separator"></li>
     <li><a href="{% url 'flood_threat_viewer:floodExtent' %}">Flood Extent</a></li>
@@ -15,16 +15,8 @@
 
 
 {% block app_content %}
-<!-- This extra bit of style defines the size of the "map" div tag area that shows up later -->
-    <style>
-      .map {
-        height: 600px;
-        width: 100%;
-      }
-    </style>
+  <img src="{% static tethys_app.icon %}" width=100% height=100% padding=0>
 
-<!--div tag for map-->
-    <div id="map" class="map"></div>
 {% endblock %}
 
 {% block app_actions %}

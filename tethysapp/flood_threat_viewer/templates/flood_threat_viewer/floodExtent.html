@@ -6,25 +6,24 @@
     <li><a href="{% url 'flood_threat_viewer:home' %}">Home</a></li>
     <li><a href="{% url 'flood_threat_viewer:Instructions' %}">Instructions</a></li>
     <li class="separator"></li>
-    <li><a href="{% url 'flood_threat_viewer:floodExtent' %}">Flood Extent</a></li>
+    <li class="active"><a href="{% url 'flood_threat_viewer:floodExtent' %}">Flood Extent</a></li>
+    <li class="separator"></li>
+    <h9>Likelihood area will flood:</h9>
+    <li><input type="radio" onClick="onClickToggleLayers(offLyr);"  id="offID" name="extent" value="off">Layer off</li>
+    <li><input type="radio" onClick="onClickToggleLayers(fldextLyr);"  id="fld_ext" name="extent" value="fldext">Flood Extent</li>
+
+
+    <li class="separator"></li>
     <li><a href="{% url 'flood_threat_viewer:waterDepth' %}">Water Depth</a></li>
     <li><a href="{% url 'flood_threat_viewer:flowVelocity' %}">Flow Velocity</a></li>
     <li><a href="{% url 'flood_threat_viewer:critConditions' %}">Critical Conditions</a></li>
     <li class="separator"></li>
 
-    <li><input type="radio" onClick="flood.setVisible(!flood.getVisible());"  id="fl_dext" name="extent" value="fldext">Flood Extent
 
-
+    <li><input type="submit" value="Download Image"></li>
 {% endblock %}
 
 {% block app_content %}
-<!-- This extra bit of style defines the size of the "map" div tag area that shows up later -->
-    <style>
-      .map {
-        height: 600px;
-        width: 100%;
-      }
-    </style>
 
   <div id="map" class="map"></div>
 
@@ -32,7 +31,7 @@
 
 {% block scripts %}
   {{ block.super }}
-  <script src="{% static 'flood_threat_viewer/js/main.js' %}" type="text/javascript"></script>
+  <script src="{% static 'flood_threat_viewer/js/floodExtent.js' %}" type="text/javascript"></script>
 {% endblock %}
 
 

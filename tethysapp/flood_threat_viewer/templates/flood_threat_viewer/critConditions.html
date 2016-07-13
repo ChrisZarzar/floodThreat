@@ -9,32 +9,36 @@
     <li><a href="{% url 'flood_threat_viewer:floodExtent' %}">Flood Extent</a></li>
     <li><a href="{% url 'flood_threat_viewer:waterDepth' %}">Water Depth</a></li>
     <li><a href="{% url 'flood_threat_viewer:flowVelocity' %}">Flow Velocity</a></li>
-    <li><a href="{% url 'flood_threat_viewer:critConditions' %}">Critical Conditions</a></li>
+    <li class=active><a href="{% url 'flood_threat_viewer:critConditions' %}">Critical Conditions</a></li>
     <li class="separator"></li>
 
     {# Set of radio buttons to show for critical threshold selection #}
     <div id="critRadioGroup">
         <h9>Likelihood of critical flood conditions:</h9>
-        <li><input type="radio" onClick="flood.setVisible(!flood.getVisible());"  id="crit_1" name="crit" value="crit1">Critical Condition 1
-        <li><input type="radio" onClick="land.setVisible(!land.getVisible());"  id="crit_2" name="crit" value="crit2">Critical Condition 2
-        <li><input type="radio" onClick="address.setVisible(!address.getVisible());"  id="crit_3" name="crit" value="crit3">Critical Condition 3
-        <li><input type="radio" onClick="flood.setVisible(!flood.getVisible());"  id="crit_4" name="crit" value="crit4">Critical Condition 4
-        <li><input type="radio" onClick="land.setVisible(!land.getVisible());"  id="crit_5" name="crit" value="crit5">Critical Condition 5
-        <li><input type="radio" onClick="address.setVisible(!address.getVisible());"  id="crit_6" name="crit" value="crit6">Critical Condition 6
-        <li><input type="radio" onClick="flood.setVisible(!flood.getVisible());"  id="crit_7" name="crit" value="crit7">Critical Condition 7
-        <li><input type="radio" onClick="flood.setVisible(!flood.getVisible());"  id="crit_8" name="crit" value="crit8">Critical Condition 8
-        <li><input type="radio" onClick="flood.setVisible(!flood.getVisible());"  id="crit_9" name="crit" value="crit9">Critical Condition 9
-        <li><input type="radio" onClick="flood.setVisible(!flood.getVisible());"  id="crit_10" name="crit" value="crit10">Critical Condition 10
+        <li><input type="radio" onClick="onClickToggleLayers(critLyr1);"  id="crit_1" name="crit" value="cri1">½ ft water moving at 4 mph
+        <li><input type="radio" onClick="onClickToggleLayers(critLyr2);"  id="crit_2" name="crit" value="cri2">1 ft water moving at 4 mph
+        <li><input type="radio" onClick="onClickToggleLayers(critLyr3);"  id="crit_3" name="crit" value="cri3">2 ft water moving at 4 mph
+        <li><input type="radio" onClick="onClickToggleLayers(critLyr4);"  id="crit_4" name="crit" value="cri4">½ ft water moving at 6 mph
+        <li><input type="radio" onClick="onClickToggleLayers(critLyr5);"  id="crit_5" name="crit" value="cri5">1 ft water moving at 6 mph
+        <li><input type="radio" onClick="onClickToggleLayers(critLyr6);"  id="crit_6" name="crit" value="cri6">2 ft water moving at 6 mph
+        <li><input type="radio" onClick="onClickToggleLayers(critLyr7);"  id="crit_7" name="crit" value="cri7">3 ft water moving at 2 mph
+        <li><input type="radio" onClick="onClickToggleLayers(critLyr8);"  id="crit_8" name="crit" value="cri8">4 ft water moving at 2 mph
+        <li><input type="radio" onClick="onClickToggleLayers(critLyr9);"  id="crit_9" name="crit" value="cri9">5 ft water moving at 1 mph
+        <li><input type="radio" onClick="onClickToggleLayers(critLyr10);"  id="crit_10" name="crit" value="cri10">6 ft water moving at 1 mph
     </div>
-{% endblock %}
+    <li class="separator"></li>
 
+
+    <li><input type="submit" value="Download Image"></li>
+{% endblock %}
 
 {% block app_content %}
 
-{% endblock %}
-
-
-{% block app_actions %}
+  <div id="map" class="map"></div>
 
 {% endblock %}
 
+{% block scripts %}
+  {{ block.super }}
+  <script src="{% static 'flood_threat_viewer/js/critConditions.js' %}" type="text/javascript"></script>
+{% endblock %}

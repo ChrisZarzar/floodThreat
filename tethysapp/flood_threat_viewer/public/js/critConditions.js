@@ -11,37 +11,27 @@ var baseLayer = new ol.layer.Tile({
     });
 
 //Define all WMS Sources:
-var velocity_1 =  new ol.source.TileWMS({
+var crit1 =  new ol.source.TileWMS({
         url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
 
         params:{
-            LAYERS:"11",
+            LAYERS:"18",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
         });
 
-var velocity_2 =  new ol.source.TileWMS({
+var crit2 =  new ol.source.TileWMS({
         url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
 
         params:{
-            LAYERS:"20",
+            LAYERS:"12",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
         });
 
-var velocity_3 =  new ol.source.TileWMS({
-        url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
-
-        params:{
-            LAYERS:"3",
-//            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
-        },
-        crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
-        });
-
-var velocity_4 =  new ol.source.TileWMS({
+var crit3 =  new ol.source.TileWMS({
         url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
 
         params:{
@@ -51,7 +41,57 @@ var velocity_4 =  new ol.source.TileWMS({
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
         });
 
-var velocity_5 =  new ol.source.TileWMS({
+var crit4 =  new ol.source.TileWMS({
+        url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
+
+        params:{
+            LAYERS:"13",
+//            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
+        },
+        crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
+        });
+
+var crit5 =  new ol.source.TileWMS({
+        url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
+
+        params:{
+            LAYERS:"17",
+//            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
+        },
+        crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
+        });
+
+var crit6 =  new ol.source.TileWMS({
+        url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
+
+        params:{
+            LAYERS:"8",
+//            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
+        },
+        crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
+        });
+
+var crit7 =  new ol.source.TileWMS({
+        url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
+
+        params:{
+            LAYERS:"4",
+//            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
+        },
+        crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
+        });
+
+var crit8 =  new ol.source.TileWMS({
+        url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
+
+        params:{
+            LAYERS:"21",
+//            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
+        },
+        crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
+        });
+
+var crit9 =  new ol.source.TileWMS({
         url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
 
         params:{
@@ -61,36 +101,72 @@ var velocity_5 =  new ol.source.TileWMS({
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
         });
 
+var crit10 =  new ol.source.TileWMS({
+        url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
+
+        params:{
+            LAYERS:"19",
+//            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
+        },
+        crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
+        });
+
+
 //Define all WMS layers
 //The gauge layers can be changed to layer.Image instead of layer.Tile (and .ImageWMS instead of .TileWMS) for a single tile
-var speed_1 = new ol.layer.Tile({
-    source:velocity_1,
-    visible: false
+var critLyr1 = new ol.layer.Tile({
+    source:crit1,
+    visible:false
     });
 
-var speed_2 = new ol.layer.Tile({
-    source:velocity_2,
-    visible: false
+var critLyr2 = new ol.layer.Tile({
+    source:crit2,
+    visible:false
     });
 
-var speed_3 = new ol.layer.Tile({
-    source:velocity_3,
-    visible: false
+var critLyr3 = new ol.layer.Tile({
+    source:crit3,
+    visible:false
     });
 
-var speed_4 = new ol.layer.Tile({
-    source:velocity_4,
-    visible: false
+var critLyr4 = new ol.layer.Tile({
+    source:crit4,
+    visible:false
     });
 
-var speed_5 = new ol.layer.Tile({
-    source:velocity_5,
-    visible: false
+var critLyr5 = new ol.layer.Tile({
+    source:crit5,
+    visible:false
     });
 
-sources = [velocity_1, velocity_2, velocity_3, velocity_4, velocity_5];
-layers = [baseLayer, speed_1, speed_2, speed_3, speed_4, speed_5];
-toggleLayers = [speed_1, speed_2, speed_3, speed_4, speed_5];
+var critLyr6 = new ol.layer.Tile({
+    source:crit6,
+    visible:false
+    });
+
+var critLyr7 = new ol.layer.Tile({
+    source:crit7,
+    visible:false
+    });
+
+var critLyr8 = new ol.layer.Tile({
+    source:crit8,
+    visible:false
+    });
+
+var critLyr9 = new ol.layer.Tile({
+    source:crit9,
+    visible:false
+    });
+
+var critLyr10 = new ol.layer.Tile({
+    source:crit10,
+    visible:false
+    });
+
+sources = [crit1, crit2, crit3, crit4, crit5, crit6, crit7, crit8, crit9, crit10];
+layers = [baseLayer, critLyr1, critLyr2, critLyr3, critLyr4, critLyr5, critLyr6, critLyr7, critLyr8, critLyr9, critLyr10];
+toggleLayers = [critLyr1, critLyr2, critLyr3, critLyr4, critLyr5, critLyr6, critLyr7, critLyr8, critLyr9, critLyr10];
 
 function onClickToggleLayers(showLayer){
     toggleLayers.forEach(function(layer){
@@ -102,7 +178,7 @@ function onClickToggleLayers(showLayer){
 var view = new ol.View({
         center: [-8380000, 4850000],
         projection: projection,
-        zoom: 12.5,
+        zoom: 12.5
     });
 
 //Declare the map object itself.
@@ -111,6 +187,7 @@ var map = new ol.Map({
     layers: layers,
     view: view,
 });
+
 
 
 map.addControl(new ol.control.ZoomSlider());
@@ -127,7 +204,8 @@ map.addControl(new ol.control.ZoomSlider());
         }, 350);
     });
 
+
     config = {attributes: true};
 
     observer.observe(target, config);
-});
+}());
