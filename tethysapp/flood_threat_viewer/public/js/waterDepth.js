@@ -10,72 +10,74 @@ var baseLayer = new ol.layer.Tile({
         })
     });
 
+var servDir = 'http://geoserver.byu.edu/arcgis/services/HyEFIUM/HECRAS_Output_5x5m/MapServer/WmsServer?'
+
 //Define all WMS Sources:
 var depth1 =  new ol.source.TileWMS({
-        url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
+        url:servDir,
 
         params:{
-            LAYERS:"18",
+            LAYERS:"1",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
         });
 
 var depth2 =  new ol.source.TileWMS({
-        url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
+        url:servDir,
 
         params:{
-            LAYERS:"12",
+            LAYERS:"2",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
         });
 
 var depth3 =  new ol.source.TileWMS({
-        url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
+        url:servDir,
 
         params:{
-            LAYERS:"7",
+            LAYERS:"3",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
         });
 
 var depth4 =  new ol.source.TileWMS({
-        url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
+        url:servDir,
 
         params:{
-            LAYERS:"13",
+            LAYERS:"4",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
         });
 
 var depth5 =  new ol.source.TileWMS({
-        url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
+        url:servDir,
 
         params:{
-            LAYERS:"17",
+            LAYERS:"5",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
         });
 
 var depth6 =  new ol.source.TileWMS({
-        url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
+        url:servDir,
 
         params:{
-            LAYERS:"8",
+            LAYERS:"6",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
         });
 
 var depth7 =  new ol.source.TileWMS({
-        url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
+        url:servDir,
 
         params:{
-            LAYERS:"4",
+            LAYERS:"7",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
@@ -118,6 +120,15 @@ var depthLyr7 = new ol.layer.Tile({
     visible:false
     });
 
+//Set opacity of layers
+depthLyr1.setOpacity(0.75);
+depthLyr2.setOpacity(0.75);
+depthLyr3.setOpacity(0.75);
+depthLyr4.setOpacity(0.75);
+depthLyr5.setOpacity(0.75);
+depthLyr6.setOpacity(0.75);
+depthLyr7.setOpacity(0.75);
+
 sources = [depth1, depth2, depth3, depth4, depth5, depth6, depth7];
 layers = [baseLayer, depthLyr1, depthLyr2, depthLyr3, depthLyr4, depthLyr5, depthLyr6, depthLyr7];
 toggleLayers = [depthLyr1, depthLyr2, depthLyr3, depthLyr4, depthLyr5, depthLyr6, depthLyr7];
@@ -129,9 +140,9 @@ function onClickToggleLayers(showLayer){
     }
 //Establish the view area. Note the reprojection from lat long (EPSG:4326) to Web Mercator (EPSG:3857)
 var view = new ol.View({
-        center: [-8380000, 4850000],
+        center: [-8378000, 4851000],
         projection: projection,
-        zoom: 12.5
+        zoom: 13,
     });
 
 //Declare the map object itself.

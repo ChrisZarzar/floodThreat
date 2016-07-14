@@ -9,21 +9,23 @@
     <li><a href="{% url 'flood_threat_viewer:floodExtent' %}">Flood Extent</a></li>
     <li><a href="{% url 'flood_threat_viewer:waterDepth' %}">Water Depth</a></li>
     <li class="active"><a href="{% url 'flood_threat_viewer:flowVelocity' %}">Flow Velocity</a></li>
+    <li><a href="{% url 'flood_threat_viewer:critConditions' %}">Critical Conditions</a></li>
 
     <li class="separator"></li>
     {# Set of radio buttons to show for flow velocity selection #}
     <div id="fvRadioGroup">
-        <h9>Likelihood flow velocity will flow faster than</h9>
-        <li><input type="radio" onClick="onClickToggleLayers(speed_1);" name="fv" value="fvhlf"> 1 mph
-        <li><input type="radio" onClick="onClickToggleLayers(speed_2);" name="fv" value="fv1"> 2 mph
-        <li><input type="radio" onClick="onClickToggleLayers(speed_3);" name="fv" value="fv2"> 4 mph
-        <li><input type="radio" onClick="onClickToggleLayers(speed_4);" name="fv" value="fv3"> 6 mph
-        <li><input type="radio" onClick="onClickToggleLayers(speed_5);" name="fv" value="fv4"> 8 mph
+        <h9>Likelihood water will be moving faster than:</h9>
+        <li><input type="radio" onClick="onClickToggleLayers(speed_1);" name="fv" value="fvhlf"> 1 mph</li>
+        <li><input type="radio" onClick="onClickToggleLayers(speed_2);" name="fv" value="fv1"> 2 mph</li>
+        <li><input type="radio" onClick="onClickToggleLayers(speed_3);" name="fv" value="fv2"> 4 mph</li>
+        <li><input type="radio" onClick="onClickToggleLayers(speed_4);" name="fv" value="fv3"> 6 mph</li>
+        <li><input type="radio" onClick="onClickToggleLayers(speed_5);" name="fv" value="fv4"> 8 mph</li>
 
     </div>
-    <li class="separator"></li>
-    <li><a href="{% url 'flood_threat_viewer:critConditions' %}">Critical Conditions</a></li>
-
+<li class="separator"></li>
+        <h9>Legend</h9>
+        <img src="{% static tethys_app.critLeg %}" width=100% height="20">
+        <!--<img src="http://geoserver.byu.edu/arcgis/services/HyEFIUM/fldext_legend/MapServer/WmsServer?">-->
     <li class="separator"></li>
 
     <input type="submit" value="Download Image">

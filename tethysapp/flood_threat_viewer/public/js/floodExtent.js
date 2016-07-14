@@ -12,9 +12,11 @@ var baseLayer = new ol.layer.Tile({
         })
     });
 
+var servDir = 'http://geoserver.byu.edu/arcgis/services/HyEFIUM/HECRAS_Output_5x5m/MapServer/WmsServer?'
+
 //Define all WMS Sources:
 var off =  new ol.source.TileWMS({
-        url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
+        url:servDir,
 
         params:{
             LAYERS:"",
@@ -24,10 +26,10 @@ var off =  new ol.source.TileWMS({
         });
 
 var flood =  new ol.source.TileWMS({
-        url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
+        url:servDir,
 
         params:{
-            LAYERS:"10",
+            LAYERS:"0",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
@@ -45,6 +47,9 @@ var fldextLyr = new ol.layer.Tile({
     visible:false
     });
 
+//Set opacity of layers
+fldextLyr.setOpacity(0.75);
+
 sources = [off, flood];
 layers = [baseLayer, offLyr, fldextLyr];
 toggleLayers = [offLyr, fldextLyr];
@@ -57,9 +62,9 @@ function onClickToggleLayers(showLayer){
 
 //Establish the view area. Note the reprojection from lat long (EPSG:4326) to Web Mercator (EPSG:3857)
 var view = new ol.View({
-        center: [-8380000, 4850000],
+        center: [-8378000, 4851000],
         projection: projection,
-        zoom: 12.5,
+        zoom: 13,
     });
 
 //Declare the map object itself.

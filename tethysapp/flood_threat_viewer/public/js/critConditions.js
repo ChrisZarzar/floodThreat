@@ -10,39 +10,11 @@ var baseLayer = new ol.layer.Tile({
         })
     });
 
+var servDir = 'http://geoserver.byu.edu/arcgis/services/HyEFIUM/HECRAS_Output_5x5m/MapServer/WmsServer?'
+
 //Define all WMS Sources:
 var crit1 =  new ol.source.TileWMS({
-        url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
-
-        params:{
-            LAYERS:"18",
-//            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
-        },
-        crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
-        });
-
-var crit2 =  new ol.source.TileWMS({
-        url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
-
-        params:{
-            LAYERS:"12",
-//            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
-        },
-        crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
-        });
-
-var crit3 =  new ol.source.TileWMS({
-        url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
-
-        params:{
-            LAYERS:"7",
-//            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
-        },
-        crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
-        });
-
-var crit4 =  new ol.source.TileWMS({
-        url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
+        url:servDir,
 
         params:{
             LAYERS:"13",
@@ -51,8 +23,38 @@ var crit4 =  new ol.source.TileWMS({
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
         });
 
+var crit2 =  new ol.source.TileWMS({
+        url:servDir,
+
+        params:{
+            LAYERS:"14",
+//            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
+        },
+        crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
+        });
+
+var crit3 =  new ol.source.TileWMS({
+        url:servDir,
+
+        params:{
+            LAYERS:"15",
+//            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
+        },
+        crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
+        });
+
+var crit4 =  new ol.source.TileWMS({
+        url:servDir,
+
+        params:{
+            LAYERS:"16",
+//            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
+        },
+        crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
+        });
+
 var crit5 =  new ol.source.TileWMS({
-        url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
+        url:servDir,
 
         params:{
             LAYERS:"17",
@@ -62,27 +64,37 @@ var crit5 =  new ol.source.TileWMS({
         });
 
 var crit6 =  new ol.source.TileWMS({
-        url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
+        url:servDir,
 
         params:{
-            LAYERS:"8",
+            LAYERS:"18",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
         });
 
 var crit7 =  new ol.source.TileWMS({
-        url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
+        url:servDir,
 
         params:{
-            LAYERS:"4",
+            LAYERS:"19",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
         });
 
 var crit8 =  new ol.source.TileWMS({
-        url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
+        url:servDir,
+
+        params:{
+            LAYERS:"20",
+//            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
+        },
+        crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
+        });
+
+var crit9 =  new ol.source.TileWMS({
+        url:servDir,
 
         params:{
             LAYERS:"21",
@@ -91,21 +103,11 @@ var crit8 =  new ol.source.TileWMS({
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
         });
 
-var crit9 =  new ol.source.TileWMS({
-        url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
-
-        params:{
-            LAYERS:"16",
-//            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
-        },
-        crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
-        });
-
 var crit10 =  new ol.source.TileWMS({
-        url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
+        url:servDir,
 
         params:{
-            LAYERS:"19",
+            LAYERS:"22",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
@@ -164,6 +166,18 @@ var critLyr10 = new ol.layer.Tile({
     visible:false
     });
 
+//Set opacity of layers
+critLyr1.setOpacity(0.75);
+critLyr2.setOpacity(0.75);
+critLyr3.setOpacity(0.75);
+critLyr4.setOpacity(0.75);
+critLyr5.setOpacity(0.75);
+critLyr6.setOpacity(0.75);
+critLyr7.setOpacity(0.75);
+critLyr8.setOpacity(0.75);
+critLyr9.setOpacity(0.75);
+critLyr10.setOpacity(0.75);
+
 sources = [crit1, crit2, crit3, crit4, crit5, crit6, crit7, crit8, crit9, crit10];
 layers = [baseLayer, critLyr1, critLyr2, critLyr3, critLyr4, critLyr5, critLyr6, critLyr7, critLyr8, critLyr9, critLyr10];
 toggleLayers = [critLyr1, critLyr2, critLyr3, critLyr4, critLyr5, critLyr6, critLyr7, critLyr8, critLyr9, critLyr10];
@@ -176,9 +190,9 @@ function onClickToggleLayers(showLayer){
 
 //Establish the view area. Note the reprojection from lat long (EPSG:4326) to Web Mercator (EPSG:3857)
 var view = new ol.View({
-        center: [-8380000, 4850000],
+        center: [-8378000, 4851000],
         projection: projection,
-        zoom: 12.5
+        zoom: 13,
     });
 
 //Declare the map object itself.

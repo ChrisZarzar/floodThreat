@@ -10,9 +10,41 @@ var baseLayer = new ol.layer.Tile({
         })
     });
 
+var servDir = 'http://geoserver.byu.edu/arcgis/services/HyEFIUM/HECRAS_Output_5x5m/MapServer/WmsServer?'
+
 //Define all WMS Sources:
 var velocity_1 =  new ol.source.TileWMS({
-        url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
+        url:servDir,
+
+        params:{
+            LAYERS:"8",
+//            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
+        },
+        crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
+        });
+
+var velocity_2 =  new ol.source.TileWMS({
+        url:servDir,
+
+        params:{
+            LAYERS:"9",
+//            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
+        },
+        crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
+        });
+
+var velocity_3 =  new ol.source.TileWMS({
+        url:servDir,
+
+        params:{
+            LAYERS:"10",
+//            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
+        },
+        crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
+        });
+
+var velocity_4 =  new ol.source.TileWMS({
+        url:servDir,
 
         params:{
             LAYERS:"11",
@@ -21,41 +53,11 @@ var velocity_1 =  new ol.source.TileWMS({
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
         });
 
-var velocity_2 =  new ol.source.TileWMS({
-        url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
-
-        params:{
-            LAYERS:"20",
-//            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
-        },
-        crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
-        });
-
-var velocity_3 =  new ol.source.TileWMS({
-        url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
-
-        params:{
-            LAYERS:"3",
-//            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
-        },
-        crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
-        });
-
-var velocity_4 =  new ol.source.TileWMS({
-        url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
-
-        params:{
-            LAYERS:"7",
-//            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
-        },
-        crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
-        });
-
 var velocity_5 =  new ol.source.TileWMS({
-        url:'http://geoserver.byu.edu/arcgis/services/HyEFIUM/Nayc2D_test/MapServer/WmsServer?',
+        url:servDir,
 
         params:{
-            LAYERS:"16",
+            LAYERS:"12",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
@@ -88,6 +90,13 @@ var speed_5 = new ol.layer.Tile({
     visible: false
     });
 
+//Set opacity of layers
+speed_1.setOpacity(0.75);
+speed_2.setOpacity(0.75);
+speed_3.setOpacity(0.75);
+speed_4.setOpacity(0.75);
+speed_5.setOpacity(0.75);
+
 sources = [velocity_1, velocity_2, velocity_3, velocity_4, velocity_5];
 layers = [baseLayer, speed_1, speed_2, speed_3, speed_4, speed_5];
 toggleLayers = [speed_1, speed_2, speed_3, speed_4, speed_5];
@@ -100,9 +109,9 @@ function onClickToggleLayers(showLayer){
 
 //Establish the view area. Note the reprojection from lat long (EPSG:4326) to Web Mercator (EPSG:3857)
 var view = new ol.View({
-        center: [-8380000, 4850000],
+        center: [-8378000, 4851000],
         projection: projection,
-        zoom: 12.5,
+        zoom: 13,
     });
 
 //Declare the map object itself.

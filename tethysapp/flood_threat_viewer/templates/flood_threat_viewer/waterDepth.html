@@ -8,22 +8,23 @@
     <li class="separator"></li>
     <li><a href="{% url 'flood_threat_viewer:floodExtent' %}">Flood Extent</a></li>
     <li class="active"><a href="{% url 'flood_threat_viewer:waterDepth' %}">Water Depth</a></li>
+    <li><a href="{% url 'flood_threat_viewer:flowVelocity' %}">Flow Velocity</a></li>
+    <li><a href="{% url 'flood_threat_viewer:critConditions' %}">Critical Conditions</a></li>
+
     <li class="separator"></li>
     <div id="wdRadioGroup">
         <h9>Likelihood flood waters will be deeper than:</h9>
-        <li><input type="radio" onClick="onClickToggleLayers(depthLyr1);"  id="wd_hlf" name="wd" value="wdhlf">½ ft deep
-        <li><input type="radio" onClick="onClickToggleLayers(depthLyr2);"  id="wd_1" name="wd" value="wd1">1 ft deep
-        <li><input type="radio" onClick="onClickToggleLayers(depthLyr3);"  id="wd_2" name="wd" value="wd2">2 ft deep
-        <li><input type="radio" onClick="onClickToggleLayers(depthLyr4);"  id="wd_3" name="wd" value="wd3">3 ft deep
-        <li><input type="radio" onClick="onClickToggleLayers(depthLyr5);"  id="wd_4" name="wd" value="wd4">4 ft deep
-        <li><input type="radio" onClick="onClickToggleLayers(depthLyr6);"  id="wd_5" name="wd" value="wd5">5 ft deep
-        <li><input type="radio" onClick="onClickToggleLayers(depthLyr7);"  id="wd_6" name="wd" value="wd6">6 ft deep
+        <li><input type="radio" onClick="onClickToggleLayers(depthLyr1);"  id="wd_hlf" name="wd" value="wdhlf">½ ft deep</li>
+        <li><input type="radio" onClick="onClickToggleLayers(depthLyr2);"  id="wd_1" name="wd" value="wd1">1 ft deep</li>
+        <li><input type="radio" onClick="onClickToggleLayers(depthLyr3);"  id="wd_2" name="wd" value="wd2">2 ft deep</li>
+        <li><input type="radio" onClick="onClickToggleLayers(depthLyr4);"  id="wd_3" name="wd" value="wd3">3 ft deep</li>
+        <li><input type="radio" onClick="onClickToggleLayers(depthLyr5);"  id="wd_4" name="wd" value="wd4">4 ft deep</li>
+        <li><input type="radio" onClick="onClickToggleLayers(depthLyr6);"  id="wd_5" name="wd" value="wd5">5 ft deep</li>
+        <li><input type="radio" onClick="onClickToggleLayers(depthLyr7);"  id="wd_6" name="wd" value="wd6">6 ft deep</li>
     </div>
-
-    <li class="separator"></li>
-    <li><a href="{% url 'flood_threat_viewer:flowVelocity' %}">Flow Velocity</a></li>
-    <li><a href="{% url 'flood_threat_viewer:critConditions' %}">Critical Conditions</a></li>
-    <li class="separator"></li>
+<li class="separator"></li>
+        <h9>Legend</h9>
+        <img src="{% static tethys_app.critLeg %}" width=100% height="20">
 
 
 
