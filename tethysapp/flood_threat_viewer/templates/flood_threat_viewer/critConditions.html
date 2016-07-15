@@ -14,7 +14,7 @@
 
     {# Set of radio buttons to show for critical threshold selection #}
     <div id="critRadioGroup">
-        <h9>Likelihood of exceeding particularly dangerous flood conditions:</h9>
+        <h8>Likelihood of exceeding particularly dangerous flood conditions:</h8>
         <li><input type="radio" onClick="onClickToggleLayers(critLyr1);"  id="crit_1" name="crit" value="cri1">½ ft water moving at 4 mph</li>
         <li><input type="radio" onClick="onClickToggleLayers(critLyr2);"  id="crit_2" name="crit" value="cri2">1 ft water moving at 4 mph</li>
         <li><input type="radio" onClick="onClickToggleLayers(critLyr3);"  id="crit_3" name="crit" value="cri3">2 ft water moving at 4 mph</li>
@@ -27,8 +27,8 @@
         <li><input type="radio" onClick="onClickToggleLayers(critLyr10);"  id="crit_10" name="crit" value="cri10">6 ft water moving at 1 mph</li>
     </div>
 <li class="separator"></li>
-        <h9>Legend</h9>
-        <img src="{% static tethys_app.critLeg %}" width=100% height="20">
+        <h8>Legend</h8>
+         <img src="/static/flood_threat_viewer/images/critLeg.png" width=100% height="50">
     <li class="separator"></li>
 
 

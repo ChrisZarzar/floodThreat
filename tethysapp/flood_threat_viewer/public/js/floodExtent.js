@@ -14,6 +14,8 @@ var baseLayer = new ol.layer.Tile({
 
 var servDir = 'http://geoserver.byu.edu/arcgis/services/HyEFIUM/HECRAS_Output_5x5m/MapServer/WmsServer?'
 
+
+
 //Define all WMS Sources:
 var off =  new ol.source.TileWMS({
         url:servDir,

@@ -11,13 +11,15 @@
     <li><a href="{% url 'flood_threat_viewer:flowVelocity' %}">Flow Velocity</a></li>
     <li><a href="{% url 'flood_threat_viewer:critConditions' %}">Critical Conditions</a></li>
     <li class="separator"></li>
-    <h9>Likelihood area will flood:</h9>
+    <h8>Likelihood area will flood:</h8>
     <li><input type="radio" onClick="onClickToggleLayers(offLyr);"  id="offID" name="extent" value="off">Layer off</li>
     <li><input type="radio" onClick="onClickToggleLayers(fldextLyr);"  id="fld_ext" name="extent" value="fldext">Flood Extent</li>
 
 <li class="separator"></li>
-    <h9>Legend</h9>
-    <img src="{% static tethys_app.critLeg %}" width=100% height="20">
+    <h8>Legend</h8>
+    <img src="/static/flood_threat_viewer/images/fldextLeg.png" width=100% height="50">
+
+
     <li class="separator"></li>
 
 
@@ -26,7 +28,8 @@
 
 {% block app_content %}
 
-  <div id="map" class="map"></div>
+    <div id="map" class="map"></div>
+
 
 {% endblock %}
 
