@@ -4,7 +4,7 @@
 
 {% block app_navigation_items %}
     <li><a href="{% url 'flood_threat_viewer:home' %}">Home</a></li>
-    <li><a href="{% url 'flood_threat_viewer:Instructions' %}">Instructions</a></li>
+    <li><a href="{% url 'flood_threat_viewer:Instructions' %}">About</a></li>
     <li class="separator"></li>
     <li><a href="{% url 'flood_threat_viewer:floodExtent' %}">Flood Extent</a></li>
     <li><a href="{% url 'flood_threat_viewer:waterDepth' %}">Water Depth</a></li>
@@ -14,7 +14,7 @@
 
     {# Set of radio buttons to show for critical threshold selection #}
     <div id="critRadioGroup">
-        <h8>Likelihood of exceeding particularly dangerous flood conditions:</h8>
+        <h8>Risk of exceeding particularly dangerous flood conditions:</h8>
         <li><input type="radio" onClick="onClickToggleLayers(critLyr1);"  id="crit_1" name="crit" value="cri1">½ ft water moving at 4 mph</li>
         <li><input type="radio" onClick="onClickToggleLayers(critLyr2);"  id="crit_2" name="crit" value="cri2">1 ft water moving at 4 mph</li>
         <li><input type="radio" onClick="onClickToggleLayers(critLyr3);"  id="crit_3" name="crit" value="cri3">2 ft water moving at 4 mph</li>
@@ -32,7 +32,7 @@
     <li class="separator"></li>
 
 
-    <li><input type="submit" value="Download Image"></li>
+    <!--<li><input type="submit" value="Download Image"></li>-->
 {% endblock %}
 
 {% block app_content %}

@@ -4,7 +4,7 @@
 
 {% block app_navigation_items %}
     <li><a href="{% url 'flood_threat_viewer:home' %}">Home</a></li>
-    <li class="active"><a href="{% url 'flood_threat_viewer:Instructions' %}">Instructions</a></li>
+    <li class="active"><a href="{% url 'flood_threat_viewer:Instructions' %}">About</a></li>
     <li class="separator"></li>
     <li><a href="{% url 'flood_threat_viewer:floodExtent' %}">Flood Extent</a></li>
     <li><a href="{% url 'flood_threat_viewer:waterDepth' %}">Water Depth</a></li>
@@ -15,10 +15,28 @@
 
 {% block app_content %}
 
-<h1><font size="18"><font color="#1a1a1a">Instructions</font></h1>
-<h2>Darby Creek Case Study</h2>
-  <p>Welcome to the Flood Threat Viewer. This interface will allow you to quicly view the likelihood of dangerous flood conditions </p>
-  <p>Use the drop down box to select the flood threat variable you are interested in.....</p>
+<!--<h1><font size="18"><font color="#1a1a1a">About</font></h1>-->
+<h2>About</h2>
+  <p>Welcome to the Flood Threat Viewer. This interface will allow you to quickly view the risk of hazardous flood conditions </p>
+  <p>Feedback: Please direct any questions, comments, or suggestions to chriszarzar@gmail.com  </p>
+
+  <p>Instructions: There are four variables that can be viewed. Clicking on flood extent, water depth, flow velocity, or critical conditions will load a new page and a new set of radio button options. Selecting a radio button will activate a map that represents the risk that the selected radio button threshold will be exceeded.</p>
+
+  <p>Additional Information: This Flood Threat Viewer version 1 is a proof of concept for how risk can be communicated for hazardous flood conditions. This app is currently displaying results from a project completed during the 2016 National Water Center Innovators Program Summer Institute. The maps are based on a case study from 30 April 2014 along the Darby Creek, PA. The communicated risk is based on the agreement between ensembles generated from a time series uncertainty analysis of the National Water Model (NWM) short range forecasts. There is no attempt made to separate the origins of uncertainty; therefore, the risk communicated is based on total uncertainty contributed by the meteorological models driving the NWM, the NWM output driving the hydraulic models, and the hydraulic models. The below image exemplifies the motivation for this work.</p>
+
+  <p><img src="/static/flood_threat_viewer/images/comparison.png"></p>
+
+  <p>The flood extent in the images look similar, but the real advantages of this new risk communication method can be seen when zoomed into the Sunoco Logistics crude oil storage tank farm. The deterministic output shows that two of these oil tanks will flood; however, this proposed method for communicating flood risk shows that there is only a moderate risk of these tanks flooding. The risk map shows that only about 5 out of 10 (50%) of the outputs agree this area will be inundated. In an emergency preparation situation, this may indicate that this is an area to keep a close eye on, but maybe not an area where resources will be needed immediately.</p>
+
+  <p>More about this work can be found in Chapter 8 of the following technical report: Maidment, D. R., Rajib, A., Lin, P., Clark, E. P. 2016. National Water Center Innovators Program Summer Institute Report. Consortium of Universities for the Advancement of Hydrologic Science, Inc. Technical Report No. 13. 101 p.  **EXPECTED PUBLICATION BY SEPTEMER 1, 2016</p>
+
+  <p>Future plans for this web application include simplication of user interaction, adding an option to download the map currently displayed, and the incorporation of real-time NWM forecast to display nationwide flood risk maps. </p>
+
+
+
+
+
+
 
 {% endblock %}
 

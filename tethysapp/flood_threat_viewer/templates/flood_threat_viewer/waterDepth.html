@@ -4,7 +4,7 @@
 
 {% block app_navigation_items %}
     <li><a href="{% url 'flood_threat_viewer:home' %}">Home</a></li>
-    <li><a href="{% url 'flood_threat_viewer:Instructions' %}">Instructions</a></li>
+    <li><a href="{% url 'flood_threat_viewer:Instructions' %}">About</a></li>
     <li class="separator"></li>
     <li><a href="{% url 'flood_threat_viewer:floodExtent' %}">Flood Extent</a></li>
     <li class="active"><a href="{% url 'flood_threat_viewer:waterDepth' %}">Water Depth</a></li>
@@ -13,7 +13,7 @@
 
     <li class="separator"></li>
     <div id="wdRadioGroup">
-        <h8>Likelihood flood waters will be deeper than:</h8>
+        <h8>Risk that flood waters will be deeper than:</h8>
         <li><input type="radio" onClick="onClickToggleLayers(depthLyr1);"  id="wd_hlf" name="wd" value="wdhlf">½ ft deep</li>
         <li><input type="radio" onClick="onClickToggleLayers(depthLyr2);"  id="wd_1" name="wd" value="wd1">1 ft deep</li>
         <li><input type="radio" onClick="onClickToggleLayers(depthLyr3);"  id="wd_2" name="wd" value="wd2">2 ft deep</li>
@@ -28,7 +28,7 @@
 
 
 
-    <input type="submit" value="Download Image">
+    <!--<input type="submit" value="Download Image">-->
 {% endblock %}
 
 {% block app_content %}
