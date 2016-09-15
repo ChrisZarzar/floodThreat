@@ -10,7 +10,7 @@ var baseLayer = new ol.layer.Tile({
         })
     });
 
-var servDir = 'http://geoserver.byu.edu/arcgis/services/HyEFIUM/HECRAS_Output_5x5m/MapServer/WmsServer?'
+var servDir = 'http://geoserver.byu.edu/arcgis/services/Flood_Threat/floodThreat/MapServer/WmsServer?'
 
 //Define all WMS Sources:
 var depth1 =  new ol.source.TileWMS({
