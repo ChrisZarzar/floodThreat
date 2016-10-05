@@ -37,7 +37,7 @@ var crit3 =  new ol.source.TileWMS({
         url:servDir,
 
         params:{
-            LAYERS:"15",
+            LAYERS:"22",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
@@ -47,7 +47,7 @@ var crit4 =  new ol.source.TileWMS({
         url:servDir,
 
         params:{
-            LAYERS:"16",
+            LAYERS:"21",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
@@ -57,7 +57,7 @@ var crit5 =  new ol.source.TileWMS({
         url:servDir,
 
         params:{
-            LAYERS:"17",
+            LAYERS:"20",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
@@ -67,7 +67,7 @@ var crit6 =  new ol.source.TileWMS({
         url:servDir,
 
         params:{
-            LAYERS:"18",
+            LAYERS:"19",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
@@ -77,7 +77,7 @@ var crit7 =  new ol.source.TileWMS({
         url:servDir,
 
         params:{
-            LAYERS:"19",
+            LAYERS:"18",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
@@ -87,7 +87,7 @@ var crit8 =  new ol.source.TileWMS({
         url:servDir,
 
         params:{
-            LAYERS:"20",
+            LAYERS:"17",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
@@ -97,7 +97,7 @@ var crit9 =  new ol.source.TileWMS({
         url:servDir,
 
         params:{
-            LAYERS:"21",
+            LAYERS:"16",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
@@ -107,7 +107,7 @@ var crit10 =  new ol.source.TileWMS({
         url:servDir,
 
         params:{
-            LAYERS:"22",
+            LAYERS:"15",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser

@@ -17,7 +17,7 @@ var velocity_1 =  new ol.source.TileWMS({
         url:servDir,
 
         params:{
-            LAYERS:"8",
+            LAYERS:"11",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
@@ -27,7 +27,7 @@ var velocity_2 =  new ol.source.TileWMS({
         url:servDir,
 
         params:{
-            LAYERS:"9",
+            LAYERS:"10",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
@@ -37,7 +37,7 @@ var velocity_3 =  new ol.source.TileWMS({
         url:servDir,
 
         params:{
-            LAYERS:"10",
+            LAYERS:"9",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
@@ -47,7 +47,7 @@ var velocity_4 =  new ol.source.TileWMS({
         url:servDir,
 
         params:{
-            LAYERS:"11",
+            LAYERS:"8",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
@@ -57,7 +57,7 @@ var velocity_5 =  new ol.source.TileWMS({
         url:servDir,
 
         params:{
-            LAYERS:"12",
+            LAYERS:"7",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser

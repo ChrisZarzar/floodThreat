@@ -17,7 +17,7 @@ var depth1 =  new ol.source.TileWMS({
         url:servDir,
 
         params:{
-            LAYERS:"1",
+            LAYERS:"0",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
@@ -27,7 +27,7 @@ var depth2 =  new ol.source.TileWMS({
         url:servDir,
 
         params:{
-            LAYERS:"2",
+            LAYERS:"6",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
@@ -37,7 +37,7 @@ var depth3 =  new ol.source.TileWMS({
         url:servDir,
 
         params:{
-            LAYERS:"3",
+            LAYERS:"5",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
@@ -57,7 +57,7 @@ var depth5 =  new ol.source.TileWMS({
         url:servDir,
 
         params:{
-            LAYERS:"5",
+            LAYERS:"3",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
@@ -67,7 +67,7 @@ var depth6 =  new ol.source.TileWMS({
         url:servDir,
 
         params:{
-            LAYERS:"6",
+            LAYERS:"2",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
@@ -77,7 +77,7 @@ var depth7 =  new ol.source.TileWMS({
         url:servDir,
 
         params:{
-            LAYERS:"7",
+            LAYERS:"1",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
