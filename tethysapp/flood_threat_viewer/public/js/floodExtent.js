@@ -31,7 +31,7 @@ var flood =  new ol.source.TileWMS({
         url:servDir,
 
         params:{
-            LAYERS:"0",
+            LAYERS:"12",
 //            FORMAT:"image/png", //Not a necessary line, but maybe useful if needed later
         },
         crossOrigin: 'Anonymous' //This is necessary for CORS security in the browser
